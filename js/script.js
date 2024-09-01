@@ -37,11 +37,52 @@ var countdown = $("#countdown").countdown360({
 });
 
 
+
+
 // fadescroll
 
 
 /* ================ jQ=============== */
 $(function(){
+
+    // slider
+    $('.demo').slick({
+        slidesToShow: 3,
+        // slidesToScroll: 3
+        dots: true,
+        speed: 300,
+
+
+
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+              }
+            }
+          ]
+    });
+
+
     $('.counter').counterUp({
         delay: 10,
         time: 1000
@@ -52,4 +93,11 @@ $(function(){
         $("#counter1").countMe(30, 30);
         $("#counter2").countMe(40, 50);
         $("#counter3").countMe(80,100);
-})
+
+        
+            
+              
+        
+
+          
+});
